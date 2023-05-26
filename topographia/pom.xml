@@ -1,0 +1,230 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>primitives</groupId>
+    <artifactId>topographia</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>topographia</name>
+    <url>http://maven.apache.org</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <junit.platform.version>1.9.2</junit.platform.version>
+        <junit.jupiter.version>5.9.2</junit.jupiter.version>
+        <junit.vintage.version>5.9.2</junit.vintage.version>
+        <jgrapht.version>1.2.0</jgrapht.version>
+      <junit.surefire.platform.version>1.3.2</junit.surefire.platform.version>
+        <!-- <java.version>1.8</java.version> -->
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <java.version>1.8</java.version>
+<!--        <error-prone.version>2.18.0</error-prone.version>-->
+<env.topographia_daa_join.path>/Users/alpac/DEV/trousers-tss/src/tspi/daa/.libs </env.topographia_daa_join.path>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.jgrapht</groupId>
+            <artifactId>jgrapht-ext</artifactId>
+            <version>${jgrapht.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jgrapht</groupId>
+            <artifactId>jgrapht-io</artifactId>
+            <version>${jgrapht.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jgrapht</groupId>
+            <artifactId>jgrapht-core</artifactId>
+            <version>${jgrapht.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>jakarta.json</artifactId>
+            <version>1.1.6</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.json.bind</groupId>
+            <artifactId>javax.json.bind-api</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse</groupId>
+            <artifactId>yasson</artifactId>
+            <version>1.0.1</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- <dependency> -->
+        <!--     <groupId>org.junit.platform</groupId> -->
+        <!--     <artifactId>junit-platform-surefire-provider</artifactId> -->
+        <!--     <version>${junit.surefire.platform.version}</version> -->
+        <!-- </dependency> -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-console-standalone</artifactId>
+            <version>${junit.platform.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.sf</groupId>
+            <artifactId>jargs</artifactId>
+            <version>1.0</version>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.0.0</version>
+                <configuration>
+                    <charset>UTF-8</charset>
+                    <docencoding>UTF-8</docencoding>
+                    <encoding>UTF-8</encoding>
+                    <header>&lt;script type='text/javascript'
+                        src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'&gt;&lt;/script&gt;
+                    </header>
+                    <!-- Required for JDK versions after 1.8 u121 -->
+                    <additionalOptions>--allow-script-in-comments</additionalOptions>
+                </configuration>
+            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-compiler-plugin</artifactId>-->
+<!--                <version>3.8.0</version>-->
+<!--                <configuration>-->
+<!--                    <source>11</source>-->
+<!--                    <target>11</target>-->
+<!--                    <encoding>UTF-8</encoding>-->
+<!--                    <compilerArgs>-->
+<!--                        <arg>-XDcompilePolicy=simple</arg>-->
+<!--                        <arg>-Xplugin:ErrorProne</arg>-->
+<!--                    </compilerArgs>-->
+<!--                    <annotationProcessorPaths>-->
+<!--                        <path>-->
+<!--                            <groupId>com.google.errorprone</groupId>-->
+<!--                            <artifactId>error_prone_core</artifactId>-->
+<!--                            <version>${error-prone.version}</version>-->
+<!--                        </path>-->
+<!--                        &lt;!&ndash; Other annotation processors go here.-->
+
+<!--                        If 'annotationProcessorPaths' is set, processors will no longer be-->
+<!--                        discovered on the regular -classpath; see also 'Using Error Prone-->
+<!--                        together with other annotation processors' below. &ndash;&gt;-->
+<!--                    </annotationProcessorPaths>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+            <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.3</version>
+                    <configuration>
+                        <source>1.8</source>
+                        <target>1.8</target>
+                        <showWarnings>true</showWarnings>
+                    </configuration>
+                </plugin>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0</version>
+               <configuration>
+                   <argLine>-Djava.library.path=${java.library.path}${path.separator}${env.topographia_daa_join.path}</argLine>
+                </configuration> 
+                <!-- <configuration> -->
+                <!--     <includes> -->
+                <!--         <include>**/Test*.java</include> -->
+                <!--         <include>**/*Test.java</include> -->
+                <!--         <include>**/*Tests.java</include> -->
+                <!--         <include>**/*TestCase.java</include> -->
+                <!--         <include>**/*IT.java</include> -->
+                <!--     </includes> -->
+                <!-- </configuration> -->
+            </plugin>
+            <!--            <plugin>-->
+            <!--                <groupId>org.apache.maven.plugins</groupId>-->
+            <!--                <artifactId>maven-javadoc-plugin</artifactId>-->
+            <!--                <version>3.0.0</version>-->
+            <!--                <configuration>-->
+            <!--                    <tags>-->
+            <!--                        <tag>-->
+            <!--                            <name>pre</name>-->
+            <!--                            &lt;!&ndash; pre tag for all places &ndash;&gt;-->
+            <!--                            <placement>a</placement>-->
+            <!--                            <head>Preconditions:</head>-->
+            <!--                        </tag>-->
+            <!--                        <tag>-->
+            <!--                            <name>post</name>-->
+            <!--                            &lt;!&ndash; post tag for all places &ndash;&gt;-->
+            <!--                            <placement>a</placement>-->
+            <!--                            <head>Postconditions:</head>-->
+            <!--                        </tag>-->
+            <!--                        <tag>-->
+            <!--                            <name>complexity</name>-->
+            <!--                            &lt;!&ndash; computational complexity tag for all places &ndash;&gt;-->
+            <!--                            <placement>a</placement>-->
+            <!--                            <head>Computational Complexity:</head>-->
+            <!--                        </tag>-->
+            <!--                    </tags>-->
+            <!--                </configuration>-->
+            <!--            </plugin>-->
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.4.1</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <transformers>
+                                <transformer
+                                        implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>eu.prismacloud.primitives.topographia.Topographia</mainClass>
+                                </transformer>
+                            </transformers>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+    <profiles>
+    </profiles>
+    <repositories>
+        <repository>
+            <id>maven-snapshots</id>
+            <url>http://oss.sonatype.org/content/repositories/snapshots</url>
+            <layout>default</layout>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+</project>
